@@ -31,10 +31,11 @@ export default class Main {
     
     this.cart = new Cart(this.icon);
 
-    this.dishes = await fetch("/products.json")
-    .then( response => { return response.json(); })
-    .then( data => { return data; } )
-    .catch( error => { return `${error.message}` });
+    this.dishes = await fetch("/products.json");
+	this.dishes = this.dishes.json();
+    // .then( response => { return response.json(); })
+    // .then( data => { return data; } )
+    // .catch( error => { return `${error.message}` });
 
     this.grid = new ProductsGrid(this.dishes);
     document.querySelector(`[data-products-grid-holder]`).innerHTML = null;
