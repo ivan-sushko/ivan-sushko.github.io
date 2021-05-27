@@ -14,7 +14,7 @@ export default class ProductCard {
 		  event.target.closest(".card__button") ? event.target.dispatchEvent(new CustomEvent("product-add", {
 			  detail: this.product.id,
 			  bubbles: true,
-		  })) : false;
+		  })) : console.log("product-add event is NOT sent");;
 	  };
 	  
 	  created_card.insertAdjacentHTML("beforeEnd", `  
