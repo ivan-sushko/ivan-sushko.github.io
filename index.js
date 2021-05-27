@@ -33,6 +33,7 @@ export default class Main {
 
     this.dishes = await fetch("/products.json");
 	this.dishes = this.dishes.json();
+	this.dishes = this.dishes.data;
     // .then( response => { return response.json(); })
     // .then( data => { return data; } )
     // .catch( error => { return `${error.message}` });
