@@ -11,11 +11,10 @@ export default class ProductCard {
 	  created_card.className = "card";
 	  
 	  created_card.onclick = event => {
-		  console.log("card clicked");
 		  event.target.closest(".card__button") ? event.target.dispatchEvent(new CustomEvent("product-add", {
 			  detail: this.product.id,
 			  bubbles: true,
-		  })) : console.log("product-add event is NOT sent");
+		  })) : console.log("oops");
 	  };
 	  
 	  created_card.insertAdjacentHTML("beforeEnd", `  
