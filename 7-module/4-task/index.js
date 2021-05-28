@@ -126,7 +126,7 @@ export default class StepSlider {
 			  
 			  document.removeEventListener("pointermove", move);
 			  select(".slider__thumb").onpointerup = null;
-			  
+			  console.log(document.querySelector(".slider__value").innerHTML, typeof document.querySelector(".slider__value").innerHTML);
 			  document.querySelector(".slider").dispatchEvent(new CustomEvent("slider-change", {
 				  detail: Number( document.querySelector(".slider__value").innerHTML ),
 				  bubbles: true
