@@ -118,7 +118,7 @@ export default class Carousel {
 			  this.elem.addEventListener("click", function(event) {
 
 				  event.target.closest(".carousel__arrow_right")
-					? this.slides_area.append(carousel_area.children[0]) :
+					? this.slides_area.append(this.slides_area.children[0]) :
 
 				  event.target.closest(".carousel__arrow_left")
 					? this.slides_area.prepend(this.slides_area.children[this.slides_area.children.length - 1]) :
