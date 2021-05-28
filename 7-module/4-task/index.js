@@ -112,7 +112,7 @@ export default class StepSlider {
 			  if ( Number( select(".slider__value").innerHTML ) == dynamic - 1 ) {
 				  dynamic = dynamic - 1;
 				  document.querySelector(".slider").dispatchEvent(new CustomEvent("slider-change", {
-					  detail: Number( document.querySelector(".slider__value").innerHTML ),
+					  detail: dynamic,
 					  bubbles: true
 				  }));
 			  }	  
@@ -128,7 +128,7 @@ export default class StepSlider {
 			  select(".slider__thumb").onpointerup = null;
 			  
 			  document.querySelector(".slider").dispatchEvent(new CustomEvent("slider-change", {
-				  detail: dynamic,
+				  detail: Number( document.querySelector(".slider__value").innerHTML ),
 				  bubbles: true
 			  }));
 		  };
