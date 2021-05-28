@@ -119,17 +119,17 @@ export default class StepSlider {
 		  };
 		  
 		  let end = () => {
-			  document.querySelector(".slider").dispatchEvent(new CustomEvent("slider-change", {
-				  detail: dynamic,
-				  bubbles: true
-			  }));
+			  // document.querySelector(".slider").dispatchEvent(new CustomEvent("slider-change", {
+				  // detail: dynamic,
+				  // bubbles: true
+			  // }));
 			  
 			  document.querySelector(".slider").classList.toggle("slider_dragging");
 			  
 			  select(".slider__thumb").style.left = Math.floor( getStep() * 25 ) + "%";
 			  select(".slider__progress").style.width = select(".slider__thumb").style.left;
 			  
-			  // document.removeEventListener("pointermove", move);
+			  document.removeEventListener("pointermove", move);
 			  
 			  // select(".slider__thumb").onpointerup = null;
 		  };
