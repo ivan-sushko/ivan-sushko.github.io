@@ -129,13 +129,13 @@ export default class StepSlider {
 			  select(".slider__thumb").style.left = Math.floor( getStep() * 25 ) + "%";
 			  select(".slider__progress").style.width = select(".slider__thumb").style.left;
 			  
-			  document.removeEventListener("pointermove", move);
+			  // document.removeEventListener("pointermove", move);
 			  
-			  select(".slider__thumb").onpointerup = null;
+			  // select(".slider__thumb").onpointerup = null;
 		  };
 
-		  // document.addEventListener("pointermove", move);
-		  // document.onpointerup = end;
+		  document.addEventListener("pointermove", move);
+		  document.onpointerup = end;
 	  };
 	  
 	  this.elem.addEventListener("click", changeOnClick);
