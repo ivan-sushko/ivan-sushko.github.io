@@ -113,7 +113,7 @@ export default class Carousel {
 				
 		 // });
 		 
-		   let carousel_area = document.querySelector(".carousel__inner");
+		   let carousel_area = this.elem.querySelector(".carousel__inner");
 
 			  document.querySelector(".carousel").addEventListener("click", function(event) {
 
