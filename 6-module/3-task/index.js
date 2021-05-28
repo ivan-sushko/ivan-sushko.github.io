@@ -32,8 +32,8 @@ export default class Carousel {
 		 };
 		 
 		 let makeSlides = () => {
-			 this.slides_area = document.createElement("div");
-			 this.slides_area.className = "carousel__inner";
+			 let slides_area = document.createElement("div");
+			 slides_area.className = "carousel__inner";
 			 
 			 for (let slide of this.slides) {
 				 let created = document.createElement("div");
@@ -53,14 +53,14 @@ export default class Carousel {
 					</div>
 				 `);
 				 
-				 this.slides_area.append(created);
+				 slides_area.append(created);
 				 
 				 created = slide = null;
 			 }
 			 
-			 carousel.append(this.slides_area);
+			 carousel.append(slides_area);
 			
-			 // slides_area = null;
+			 slides_area = null;
 		 };
 		 
 		 let initListener = () => {
@@ -113,15 +113,15 @@ export default class Carousel {
 				
 		 // });
 		 
-		   // let carousel_area = document.querySelector(".carousel__inner");
+		   let carousel_area = document.querySelector(".carousel__inner");
 
 			  this.elem.addEventListener("click", function(event) {
 
 				  event.target.closest(".carousel__arrow_right")
-					? this.slides_area.append(this.slides_area.children[0]) :
+					? carousel_area.append(carousel_area.children[0]) :
 
 				  event.target.closest(".carousel__arrow_left")
-					? this.slides_area.prepend(this.slides_area.children[this.slides_area.children.length - 1]) :
+					? carousel_area.prepend(carousel_area.children[carousel_area.children.length - 1]) :
 
 				  false;
 			  });
