@@ -125,12 +125,13 @@ export default class StepSlider {
 			  select(".slider__progress").style.width = select(".slider__thumb").style.left;
 			  
 			  document.removeEventListener("pointermove", move);
-			  select(".slider__thumb").onpointerup = null;
-			  console.log(document.querySelector(".slider__value").innerHTML, typeof document.querySelector(".slider__value").innerHTML);
+			  
 			  document.querySelector(".slider").dispatchEvent(new CustomEvent("slider-change", {
-				  detail: Number( document.querySelector(".slider__value").innerHTML ),
+				  detail: dynamic,
 				  bubbles: true
 			  }));
+			  
+			  select(".slider__thumb").onpointerup = null;
 		  };
 
 		  document.addEventListener("pointermove", move);
