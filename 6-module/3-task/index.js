@@ -83,34 +83,47 @@ export default class Carousel {
 
 	 
 	initCarousel() {
-		 let slides_area = this.elem.querySelector(".carousel__inner");
-		 let arrow_left = this.elem.querySelector(".carousel__arrow_left");
-		 let arrow_right = this.elem.querySelector(".carousel__arrow_right");
+		 // let slides_area = this.elem.querySelector(".carousel__inner");
+		 // let arrow_left = this.elem.querySelector(".carousel__arrow_left");
+		 // let arrow_right = this.elem.querySelector(".carousel__arrow_right");
 
-		 arrow_left.style.display = "none";
+		 // arrow_left.style.display = "none";
 
-		 let clicks = 0;
-		 this.elem.addEventListener("click", event => {
+		 // let clicks = 0;
+		 // this.elem.addEventListener("click", event => {
 
-			 if (event.target.closest(".carousel__arrow_right")) {
-				++clicks;
+			 // if (event.target.closest(".carousel__arrow_right")) {
+				// ++clicks;
 
-				if (clicks > 0) arrow_left.style.display = "";
-				if (clicks == (this.slides.length - 1)) arrow_right.style.display = "none";
+				// if (clicks > 0) arrow_left.style.display = "";
+				// if (clicks == (this.slides.length - 1)) arrow_right.style.display = "none";
 					
 
-				slides_area.style.transform = `translateX(-${clicks*slides_area.offsetWidth}px)`;
-			 }
-			 if (event.target.closest(".carousel__arrow_left")) {
-				--clicks;
+				// slides_area.style.transform = `translateX(-${clicks*slides_area.offsetWidth}px)`;
+			 // }
+			 // if (event.target.closest(".carousel__arrow_left")) {
+				// --clicks;
 
-				if (clicks < (this.slides.length - 1)) arrow_right.style.display = "";
-				if (clicks == 0) arrow_left.style.display = "none";
+				// if (clicks < (this.slides.length - 1)) arrow_right.style.display = "";
+				// if (clicks == 0) arrow_left.style.display = "none";
 			
 
-				slides_area.style.transform = `translateX(-${clicks*slides_area.offsetWidth}px)`;
-			 }
+				// slides_area.style.transform = `translateX(-${clicks*slides_area.offsetWidth}px)`;
+			 // }
 				
-		 });
+		 // });
+		 
+		   let carousel_area = document.querySelector(".carousel__inner");
+
+			  document.querySelector(".carousel").addEventListener("click", function(event) {
+
+				  event.target.closest(".carousel__arrow_right")
+					? carousel_area.append(carousel_area.children[0]) :
+
+				  event.target.closest(".carousel__arrow_left")
+					? carousel_area.prepend(carousel_area.children[carousel_area.children.length - 1]) :
+
+				  false;
+			  });
 	 }
 }
