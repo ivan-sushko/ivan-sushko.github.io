@@ -134,8 +134,8 @@ export default class StepSlider {
 			  select(".slider__thumb").onpointerup = null;
 		  };
 
-		  document.addEventListener("pointermove", move);
-		  document.onpointerup = end;
+		  // document.addEventListener("pointermove", move);
+		  // document.onpointerup = end;
 	  };
 	  
 	  this.elem.addEventListener("click", changeOnClick);
