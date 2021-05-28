@@ -30,7 +30,6 @@ export default class ProductsGrid {
 			Object.defineProperty(this.filters, `${filter}`, {value: filters[filter], writable: true, enumerable: true});
 		}
 		
-		// Taken from https://github.com/js-tasks-ru/jsbasic-20210325_alexander-kuimov/blob/master/8-module/2-task/index.js#L29
 		this.result = this.products
 		.filter( item => (this.filters["noNuts"] ? this.filters["noNuts"] === !item["nuts"] : item) )
 		.filter( item => (this.filters["vegeterianOnly"] ? this.filters["vegeterianOnly"] === item["vegeterian"] : item) )
