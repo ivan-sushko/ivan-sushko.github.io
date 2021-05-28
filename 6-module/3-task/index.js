@@ -115,7 +115,7 @@ export default class Carousel {
 		 
 		   let carousel_area = this.elem.querySelector(".carousel__inner");
 
-			  this.elem.querySelector(".carousel").addEventListener("click", function(event) {
+			  this.elem.addEventListener("click", function(event) {
 
 				  event.target.closest(".carousel__arrow_right")
 					? carousel_area.append(carousel_area.children[0]) :
