@@ -125,10 +125,11 @@ export default class StepSlider {
 			  select(".slider__progress").style.width = select(".slider__thumb").style.left;
 			  
 			  document.removeEventListener("pointermove", move);
+			  document.removeEventListener("pointerup", end);
 		  };
 
 		  document.addEventListener("pointermove", move);
-		  document.onpointerup = end;
+		  document.addEventListener("pointerup", end);
 	  };
 	  
 	  this.elem.addEventListener("click", changeOnClick);
